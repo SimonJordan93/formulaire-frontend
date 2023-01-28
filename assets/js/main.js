@@ -6,33 +6,36 @@ document.addEventListener("DOMContentLoaded", () => {
     // empêcher le refresh de la page aus submit
     event.preventDefault();
     console.log("submit");
+    try {
+      const firstname = document.querySelector("#firstname").value;
+      const lastname = document.querySelector("#lastname").value;
+      const email = document.querySelector("#email").value;
+      const subject = document.querySelector("#subject").value;
+      const message = document.querySelector("#message").value;
 
-    const firstname = document.querySelector("#firstname").value;
-    const lastname = document.querySelector("#lastname").value;
-    const email = document.querySelector("#email").value;
-    const subject = document.querySelector("#subject").value;
-    const message = document.querySelector("#message").value;
-
-    console.log({
-      firstname,
-      lastname,
-      email,
-      subject,
-      message,
-    });
-
-    // requête vers le serveur en local
-    const { data } = await axios.post(
-      "https://site--test-formulaire-back--6h6hqnm2zbqs.code.run/form",
-      {
+      console.log({
         firstname,
         lastname,
         email,
         subject,
         message,
-      }
-    );
+      });
 
-    console.log("response>>", data);
+      // requête vers le serveur en local
+      const { data } = await axios.post(
+        "https://site--test-formulaire-back--6h6hqnm2zbqs.code.run/form",
+        {
+          firstname,
+          lastname,
+          email,
+          subject,
+          message,
+        }
+      );
+
+      console.log("response>>", data);
+    } catch (error) {
+      res.status(400).json({ message: error.message });
+    }
   });
 });
