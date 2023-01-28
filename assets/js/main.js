@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // requête vers le serveur en local
-    const { data } = await axios.post("http://localhost:3000/form", {
+    const { data } = await axios.post("http://test-formulaire-back:8080/form", {
       firstname,
       lastname,
       email,
