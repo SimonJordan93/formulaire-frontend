@@ -22,13 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // requête vers le serveur en local
-    const { data } = await axios.post("http://test-formulaire-back:8080/form", {
-      firstname,
-      lastname,
-      email,
-      subject,
-      message,
-    });
+    const { data } = await axios.post(
+      "https://site--test-formulaire-back--6h6hqnm2zbqs.code.run/form",
+      {
+        firstname,
+        lastname,
+        email,
+        subject,
+        message,
+      }
+    );
 
     console.log("response>>", data);
   });
