@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // requête vers le serveur en local
       const { data } = await axios.post(
-        "https://site--test-formulaire-back--6h6hqnm2zbqs.code.run/form",
+        "https://site--test-formulaire-back--6h6hqnm2zbqs.code.run",
         {
           firstname,
           lastname,
